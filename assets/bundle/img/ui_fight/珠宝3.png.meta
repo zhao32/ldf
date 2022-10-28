@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "c160d06d-682a-4cb8-bef6-5e481880fb56",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 85,
+  "height": 95,
+  "platformSettings": {},
+  "subMetas": {
+    "珠宝3": {
+      "ver": "1.0.4",
+      "uuid": "cded7ec1-557e-4721-b76b-1c75e521eef6",
+      "rawTextureUuid": "c160d06d-682a-4cb8-bef6-5e481880fb56",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 84,
+      "height": 94,
+      "rawWidth": 85,
+      "rawHeight": 95,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

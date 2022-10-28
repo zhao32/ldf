@@ -1,0 +1,20 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bird",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0,
+  "sample": 10,
+  "speed": 0.5,
+  "wrapMode": 2,
+  "curveData": {
+    "paths": {
+      "sprite": {
+        "props": {
+          "angle": []
+        }
+      }
+    }
+  },
+  "events": []
+}

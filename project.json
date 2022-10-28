@@ -1,0 +1,8 @@
+{
+  "engine": "cocos2d-html5",
+  "packages": "packages",
+  "version": "2.4.2",
+  "name": "FruitsGame",
+  "id": "eef0fdb4-3d0a-4e41-b3f4-4c07db4a0abc",
+  "isNew": false
+}
