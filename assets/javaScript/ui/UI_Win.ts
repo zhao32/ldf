@@ -42,17 +42,18 @@ export default class UI_Win extends UI_Base {
 
     onEnable(){
         let curLevel = GameDataMgr.getDataByType(E_GameData_Type.curMaxLevelNum);
-        // console.log(curLevel);
+        console.log(curLevel);
         if(curLevel>1){
             let a = curLevel - 1;
-            // console.log(a);
+            console.log('a:'+ a);
             this.titleNode.string = "第"+a+"关";
             // let mbscore = a*this.minScore;
             // this.mbNode.string = "目标分数："+mbscore;
             let score = GameDataMgr.getDataByType(E_GameData_Type.appScoreNum);
             this.dfNode.string = "游戏得分："+score;
-            // console.log(levelList[a-1].jifen);
-            this.jfNode.string = "获得积分："+levelList[a-1].jifen;
+            console.log(JSON.stringify(levelList))
+            console.log('levelList[a-1].jifen:'+ levelList[a%20-1].jifen);
+            this.jfNode.string = "获得积分："+levelList[a%20-1].jifen;
         }
     }
 

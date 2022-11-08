@@ -86,6 +86,10 @@ export default class UI_Main extends cc.Component{
         this.jfTxt.string = jfNum;
     }
 
+    doBack(){
+        location.href = 'http://ldf.vip.hnhxzkj.com?back=0'
+    }
+
 
     /**初始化 */
     init(){
@@ -123,11 +127,25 @@ export default class UI_Main extends cc.Component{
         }else{
             curpp = GameDataMgr.getDataByType(E_GameData_Type.curMaxLevelNum)
         }
+        // if(curpp>levelList.length){
+        //     UI_Tip.Instance.showTip("敬请期待");
+        //     return;
+        // }
+        // UIManager.openUI("UI_Fight");
+
         if(curpp>levelList.length){
-            UI_Tip.Instance.showTip("敬请期待");
-            return;
+            // UI_Tip.Instance.showTip("敬请期待");
+            NetWork.getLevelMesssage((res)=>{
+                if(res){
+                    let jfNum = GameDataMgr.getDataByType(E_GameData_Type.playJFNum)
+                    this.jfTxt.string = jfNum;
+                    UIManager.openUI("UI_Fight");
+                }
+            })
+            // return;
+        }else{
+            UIManager.openUI("UI_Fight");
         }
-        UIManager.openUI("UI_Fight");
     }
 
     /**竞技场点击 */

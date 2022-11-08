@@ -89,7 +89,7 @@ export default class GameClient extends cc.Component {
             let token = localStorage.getItem("token266");
             GameDataMgr.setDataByType(E_GameData_Type.appToken, token);
         }else{
-            GameDataMgr.setDataByType(E_GameData_Type.appToken, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3NlcmlhbG51bWJlciI6IjI2Nl8xOTc2IiwiZXhwIjoxNjk3MzMyOTA5LCJpc3MiOiJodHRwOi8vMjY2YXBpLnZpcC5obmh4emtqLmNvbS8iLCJhdWQiOiJodHRwOi8vMTkwbS52aXAuaG5oeHprai5jb20vIn0.hXFBs65kRMxrEx263gm6wIPJgExzhQJjDs-IeFIaPio");
+            GameDataMgr.setDataByType(E_GameData_Type.appToken, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3NlcmlhbG51bWJlciI6IjI2Nl8yMTg3IiwiZXhwIjoxNjk5MTQ2MDUwLCJpc3MiOiJodHRwOi8vMjY2YXBpLnZpcC5obmh4emtqLmNvbS8iLCJhdWQiOiJodHRwOi8vMTkwbS52aXAuaG5oeHprai5jb20vIn0.WY-VEfdyECgkTqOkQR0o5GbUxSCi3klDflY-fDLsHys");
         }
         UIManager.openUI("UI_Main");
     }

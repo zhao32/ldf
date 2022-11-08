@@ -5,6 +5,12 @@
     ]
   ],
   "excluded-modules": [
+    "DragonBones",
+    "Physics",
+    "Spine Skeleton",
+    "TiledMap",
+    "VideoPlayer",
+    "WebView",
     "3D",
     "3D Primitive",
     "3D Physics/cannon.js",
@@ -26,7 +32,7 @@
     "height": 640,
     "width": 960
   },
-  "last-module-event-record-time": 1666662608387,
+  "last-module-event-record-time": 1667528639352,
   "assets-sort-type": "name",
   "facebook": {
     "appID": "",

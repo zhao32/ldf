@@ -241,8 +241,8 @@ export default class UI_Fight extends cc.Component {
         }else{
             // console.log(curLevel);
             // console.log(levelList);
-            mbscore = levelList[curLevel-1].score;
-            this.timerNum = levelList[curLevel-1].time;
+            mbscore = levelList[curLevel%20-1].score;
+            this.timerNum = levelList[curLevel%20-1].time;
             // console.log(levelList[curLevel]);
         }
         
