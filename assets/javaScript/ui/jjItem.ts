@@ -1,4 +1,4 @@
-import { audioConfig, ccMessage, jjcList, rankList } from "../config/Config";
+import { audioConfig, ccMessage, gameData, jjcList, rankList } from "../config/Config";
 import { AudioMgr } from "../framework/AudioMgr";
 import { E_GameData_Type, GameDataMgr } from "../framework/GameDataMgr";
 import { NetWork } from "../framework/NetWork";
@@ -56,7 +56,7 @@ export default class rankItem extends cc.Component {
 
     /**好友显示 3结束  2进行中  1进入游戏   0未报名*/
     private itemShow(ai:number){
-        this.timeTxt.string = jjcList[ai].time1+"";
+        this.timeTxt.string = jjcList[ai].time2+"";
         this.peoTxt.string = jjcList[ai].bnum + "/"+ jjcList[ai].pnum + "人";
         this.goldTxt.string = jjcList[ai].score;
         if(jjcList[ai].gstate == 0){
@@ -96,7 +96,8 @@ export default class rankItem extends cc.Component {
             })
         }else if(jjcList[CarId].gstate == 1){
            
-            Observer.emit("maskShow");
+            // Observer.emit("maskShow");
+            gameData.UI_Ath.mskSHow()
             UI_Tip.Instance.showTip("等待进入游戏")
             console.log("进入游戏");
             ccMessage.CCID = jjcList[CarId].id;
@@ -107,13 +108,22 @@ export default class rankItem extends cc.Component {
                     Observer.emit("timeOS");
                     let resps = ret.info.time;
                     GameDataMgr.setDataByType(E_GameData_Type.playdzsj,resps)
-                    Observer.emit("maskClear");
+                    GameDataMgr.setDataByType(E_GameData_Type.appScoreNum,ret.info.score)
+
+                    // Observer.emit("maskClear");
                     UIManager.openUI("UI_MultiplayerFight");
                 }else{
                     UI_Tip.Instance.showTip(a);
-                    Observer.emit("maskClear");
+                    // Observer.emit("maskClear");
                 }
+                this.scheduleOnce(()=>{
+                    gameData.UI_Ath.mskClear() 
+                },1)
+
             })
+            this.scheduleOnce(()=>{
+                gameData.UI_Ath.mskClear() 
+            },2)
         }else if(jjcList[CarId].gstate == 2){
             UI_Tip.Instance.showTip("该场次正在进行中,无法进入");
         }else if(jjcList[CarId].gstate == 3){

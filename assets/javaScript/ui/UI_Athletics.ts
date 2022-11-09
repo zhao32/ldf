@@ -1,4 +1,4 @@
-import { audioConfig, jjcList } from "../config/Config";
+import { audioConfig, gameData, jjcList } from "../config/Config";
 import { AudioMgr } from "../framework/AudioMgr";
 import { E_GameData_Type, GameDataMgr } from "../framework/GameDataMgr";
 import { NetWork } from "../framework/NetWork";
@@ -37,6 +37,7 @@ export default class UI_Athletics extends cc.Component {
         Observer.on("timeOS",this.timeOS,this);
         Observer.on("maskShow",this.mskSHow,this);
         Observer.on("maskClear",this.mskClear,this);
+        gameData.UI_Ath = this
     }
 
     onEnable(){
@@ -48,6 +49,7 @@ export default class UI_Athletics extends cc.Component {
             }
         })
         this.timeOutShow();
+        gameData.UI_Ath = this
     }
     onDestroy(){
         Observer.off("sxItem");
@@ -75,6 +77,7 @@ export default class UI_Athletics extends cc.Component {
         content.removeAllChildren();
         for(let i = 0;i < this.raLen ;i++){
             let item = cc.instantiate(this.jjItem);
+            // item.x = 0
             content.addChild(item)
             item.getChildByName("getBtn").name = "jjc" + i;
             let view = item.getComponent("jjItem");
@@ -99,14 +102,16 @@ export default class UI_Athletics extends cc.Component {
         UIManager.openUI("UI_Main");
     }
 
-    private mskSHow(){
+    public mskSHow(){
         // this.maskNode.x = 0;
         this.maskNode.active = true
+        console.log('打开遮罩')
     }
 
-    private mskClear(){
+    public mskClear(){
         // this.maskNode.x = -710;
         this.maskNode.active = false
+        console.log('关闭遮罩')
 
     }
 

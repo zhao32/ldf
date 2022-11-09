@@ -1,3 +1,4 @@
+import UI_Athletics from "../ui/UI_Athletics";
 
 /**当前运行环境 */
 export const CurPlatform = {
@@ -56,4 +57,8 @@ export const audioConfig = {
     /**主页面背景音乐 */
     BGMusic: "audio/BGMusic",
     C_Click: "audio/Click1",
+}
+
+export const gameData = {
+    UI_Ath: null
 }
